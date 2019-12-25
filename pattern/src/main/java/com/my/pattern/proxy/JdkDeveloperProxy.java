@@ -3,6 +3,9 @@ package com.my.pattern.proxy;
 import java.lang.reflect.*;
 
 /**
+ * 代理：创建具有现有对象的对象，以便向外界提供功能接口
+ *
+ *
  * JDK自带的动态代理, 利用反射来实现
  * 要求： 目标类必须实现统一接口， 否则 JDK 动态代理无法使用；
  *
