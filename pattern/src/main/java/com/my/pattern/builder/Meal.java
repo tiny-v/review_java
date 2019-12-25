@@ -1,7 +1,7 @@
 package com.my.pattern.builder;
 
 /**
- * 建造者模式: LocalBuilder Pattern
+ * 建造者模式: AbstractBuilder Pattern
  * 主要解决：构建一个复杂对象时， 这个对象一些属性是固定不变的， 其它更多的属性是可选择的。
  * 解决方法：把固定属性和可选择属性分开构建， 可选属性类似零件一样，可以自由装配
  * 案例: 点餐时， 米饭和汤是固定选择， 鱼， 鸡腿， 蔬菜, 水果,  是否打包 是可选择的
@@ -35,7 +35,7 @@ public class Meal {
 
     private final Boolean pack;
 
-    public static class MealBuilder extends LocalBuilder {
+    public static class MealBuilder extends AbstractBuilder {
         /**
          * 固定属性
          */
