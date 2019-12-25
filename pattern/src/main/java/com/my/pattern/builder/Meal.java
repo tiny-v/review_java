@@ -6,6 +6,15 @@ package com.my.pattern.builder;
  * 解决方法：把固定属性和可选择属性分开构建， 可选属性类似零件一样，可以自由装配
  * 案例: 点餐时， 米饭和汤是固定选择， 鱼， 鸡腿， 蔬菜, 水果,  是否打包 是可选择的
  *
+ * 注：
+ *    使用JavaBean 的 getter/setter 也可以替代重载多个构造函数，
+ *
+ *    Meal meal = new Meal();
+ *    meal.setRice("XxxRice");
+ *    meal.setSoup("XxxSoup");
+ *
+ *    缺点：实例化的过程被分为了多个步骤， 破化了一致性， 在多线程的情况下， 需要开发人员花费额外的精力去维护其多线程下的安全
+ *
  * @author YMa69
  * @date 2019/12/24.
  */
