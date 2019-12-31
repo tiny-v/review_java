@@ -40,7 +40,7 @@ public class JdkDeveloperProxy {
                     }else if(methodName.equals(CODE)){
                         System.out.println(" === 来新功能喽 ===");
                         developer.code();
-                        System.out.println(" === 新功能可真坑啊 ===");
+                        System.out.println(" === 新功能还不错 ===");
                         return null;
                     }else{
                         return method.invoke(developer, args);

@@ -20,7 +20,7 @@ package com.my.pattern.builder;
  */
 public class Meal {
 
-    /** 将成员变量声明为final, 及初始化后不可变。 这样可保证线程安全 (也有很多成员变量是需要经常变化的， 这样就不可以声明为) */
+    /** 将成员变量声明为final, 及初始化后不可变，这样可保证线程安全; 很多业务场景中，成员变量是需要经常变化的，这样场景下不必声明为final;*/
     private final String rice;
 
     private final String soup;
@@ -88,7 +88,7 @@ public class Meal {
         }
 
         /**
-         * 在调用build方法之前， 都不会实例化对象
+         * 在调用build方法之前，都不会实例化对象
          * @return
          */
         @Override

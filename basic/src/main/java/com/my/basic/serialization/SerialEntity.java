@@ -1,4 +1,4 @@
-package com.my.basic.serialize;
+package com.my.basic.serialization;
 
 import java.io.*;
 
@@ -29,15 +29,15 @@ public class SerialEntity implements Serializable{
     /** static 修饰的字段， 不会被序列化 */
     private static String nonSerial = "will not be serialization";
 
-    /** transient 修饰的字段， 也不会被序列化 */
-    private transient String nonSerial2 = "will not be serialization too";
+    /** transient 修饰的字段， 也不会被序列化.  比如个人的帐户密码字段， 是不想被序列化保存的 */
+    private transient String transientField = "will not be serialization too";
 
     private String name;
 
     private Integer age;
 
-    public SerialEntity(String nonSerial2, String name, Integer age){
-        this.nonSerial2 = nonSerial2;
+    public SerialEntity(String transientField, String name, Integer age){
+        this.transientField = transientField;
         this.name = name;
         this.age = age;
     }
@@ -47,10 +47,11 @@ public class SerialEntity implements Serializable{
      * 使用ObjectOutputStream将 SerialEntity 实例序列化到文件中
      */
     public void doSerialization(SerialEntity serialEntity){
-        String filePath = new File("").getAbsolutePath()+"/basic/serialize/serialEntity.serial";
+        String filePath = new File("").getAbsolutePath()+"/basic/serialize/serialEntity.ser";
         createFile(filePath);
         try(ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(filePath))){
             objectOutputStream.writeObject(serialEntity);
+            objectOutputStream.flush();
         }catch (IOException e){
             e.printStackTrace();
         }
@@ -60,11 +61,11 @@ public class SerialEntity implements Serializable{
      * 使用ObjectInputStream 从序列化文件serialEntity.serial中读取并生成SerialEntity 实例
      */
     public void doDeSerialization(){
-        String filePath = new File("").getAbsolutePath()+"/basic/serialize/serialEntity.serial";
+        String filePath = new File("").getAbsolutePath()+"/basic/serialize/serialEntity.ser";
         try(ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(filePath))){
             SerialEntity serialEntity = (SerialEntity) objectInputStream.readObject();
             // null
-            System.out.println(serialEntity.nonSerial2);
+            System.out.println(serialEntity.transientField);
             // W二狗
             System.out.println(serialEntity.name);
             // 25
