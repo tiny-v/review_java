@@ -4,10 +4,10 @@
 
 模块划分:
 
-    basic:  包含一些java的基础知识；
+    basic:  java的基础知识；
 
-    advanced: 包含一些java的进阶知识；
+    advanced: java的进阶知识；
 
-    pattern: 包含一些设计模式；
+    pattern: 设计模式；
 
 ##
