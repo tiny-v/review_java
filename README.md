@@ -2,12 +2,25 @@
 
 回顾Java些许知识点
 
-模块划分:
+已有知识点:
 
-    basic:  java的基础知识；
+    Basic(基础知识)
+      1. enum 枚举
+      2. IO
+      3. reflect 反射
+      4. serilization 序列化 
 
-    advanced: java的进阶知识；
+    Advanced(进阶知识)
+      1. concurrent 并发
+           1.1 Semaphore
 
-    pattern: 设计模式；
+    Pattern(设计模式)
+   
+      1. builder 创建者模式
+      2. dynamicProxy 动态代理
+      3. singleton 单例模式
+      
+
+
 
 ##
