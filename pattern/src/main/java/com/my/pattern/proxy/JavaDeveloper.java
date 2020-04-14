@@ -1,5 +1,7 @@
 package com.my.pattern.proxy;
 
+import com.my.pattern.proxy.interfaces.Developer;
+
 /**
  * @author YMa69
  * @date 2019/12/25.

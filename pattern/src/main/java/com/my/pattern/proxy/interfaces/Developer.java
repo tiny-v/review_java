@@ -1,4 +1,4 @@
-package com.my.pattern.proxy;
+package com.my.pattern.proxy.interfaces;
 
 /**
  * 开发者接口
