@@ -17,8 +17,9 @@
  
  ######  <b>一、并发 </b>
  > 1. 单线程 - (Thread, Runnable, Callable)
- > 2. 线程池 (ThreadPoolExecutor)
+ > 2. 线程池 - (ThreadPoolExecutor)
  > 3. 多线程协作 - (Semaphore)
+ > 4. 锁 - (死锁案例)
  
 
  <b>Pattern(设计模式)</b>

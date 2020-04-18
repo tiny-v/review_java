@@ -1,8 +1,5 @@
 package com.my.advanced.concurrent.semaphore;
 
-import com.my.advanced.concurrent.PrintBar;
-import com.my.advanced.concurrent.PrintFoo;
-
 import java.util.concurrent.Semaphore;
 
 /**
@@ -20,6 +17,7 @@ import java.util.concurrent.Semaphore;
 public class SemaphoreDemo1 extends Thread{
 
     final static Semaphore FOO_SEMAPHORE = new Semaphore(1);
+    /** 用0来初始化， 使得其必须先release，才能acquire */
     final static Semaphore BAR_SEMAPHORE = new Semaphore(0);
     /** 类型 */
     enum TYPE {FOO, BAR}
@@ -69,4 +67,29 @@ public class SemaphoreDemo1 extends Thread{
         thread2.start();
     }
 
+}
+
+class PrintBar extends Thread {
+
+    private void printBar(){
+        System.out.print("bar");
+    }
+
+    @Override
+    public void run(){
+        printBar();
+    }
+}
+
+
+class PrintFoo extends Thread{
+
+    private void printFoo(){
+        System.out.print("foo");
+    }
+
+    @Override
+    public void run(){
+        printFoo();
+    }
 }

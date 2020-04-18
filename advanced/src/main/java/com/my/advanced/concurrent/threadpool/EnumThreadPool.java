@@ -1,7 +1,6 @@
 package com.my.advanced.concurrent.threadpool;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
-import com.my.advanced.concurrent.ConConsts;
 
 import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadFactory;
@@ -20,13 +19,19 @@ public enum EnumThreadPool {
 
     Instance;
 
+    /** 保持活跃的线程数 */
+    public static final int CORE_POOL_SIZE = 5;
+
+    /**  默认最大线程数 */
+    public static final int MAXIMUM_POOL_SIZE = 20;
+
     public ThreadPoolExecutor executor;
 
     EnumThreadPool(){
 
         ThreadFactory namedThreadFactory = new ThreadFactoryBuilder().setNameFormat("MyExecutor-Pool-%d").build();
 
-        executor = new ThreadPoolExecutor(ConConsts.CORE_POOL_SIZE, ConConsts.MAXIMUM_POOL_SIZE,
+        executor = new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE,
                 60, TimeUnit.SECONDS, new SynchronousQueue<Runnable>(), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
 
     }
