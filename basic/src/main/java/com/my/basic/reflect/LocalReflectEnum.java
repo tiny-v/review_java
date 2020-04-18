@@ -3,6 +3,8 @@ package com.my.basic.reflect;
 import java.lang.reflect.Method;
 
 /**
+ * 用反射获取枚举类型
+ *
  * @author YMa69
  * @date 2019/12/31.
  */
