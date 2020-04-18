@@ -11,10 +11,14 @@
  > 1. enum 枚举
  > 2. IO
  > 3. reflect 反射
- > 4. serilization 序列化 
+ > 4. serialization 序列化 
 
  <b>Advanced(进阶知识)</b>
- > 1. concurrent 并发 - (Semaphore)
+ 
+ ######  <b>一、并发 </b>
+ > 1. 单线程 - (Thread, Runnable, Callable)
+ > 2. 线程池 (ThreadPoolExecutor)
+ > 3. 多线程协作 - (Semaphore)
  
 
  <b>Pattern(设计模式)</b>
