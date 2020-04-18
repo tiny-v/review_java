@@ -23,6 +23,7 @@ public class EnumSingleObject {
     }
 
     enum EnumInstance{
+        /** 单例 */
         INSTANCE;
 
         private EnumSingleObject singleObject = new EnumSingleObject();
