@@ -12,7 +12,7 @@
  > 2. IO
  > 3. reflect 反射
  > 4. serialization 序列化 
- > 5. copy 深拷贝与浅拷贝
+ > 5. copy 深拷贝与浅拷贝 （使用Cloneable 和 Serializable）
 
  <b>Advanced(进阶知识)</b>
  
@@ -21,6 +21,11 @@
  > 2. 线程池 - (ThreadPoolExecutor)
  > 3. 多线程协作 - (Semaphore，CountDownLatch)
  > 4. 锁 - (死锁案例)
+
+ ######  <b>二、JVM </b>
+ > 1. 演示堆的 OOM 异常  -- 不停创建新对象
+ > 2. 演示栈的 OOM 异常  -- 不停创建新线程， 且每个线程不停止
+ > 3. 演示 StackOverflow 异常 -- 不停的递归调用
  
 
  <b>Pattern(设计模式)</b>
