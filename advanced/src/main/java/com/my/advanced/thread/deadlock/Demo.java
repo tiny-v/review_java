@@ -1,4 +1,4 @@
-package com.my.advanced.concurrent.deadlock;
+package com.my.advanced.thread.deadlock;
 
 /**
  * @author may

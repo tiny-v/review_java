@@ -1,4 +1,4 @@
-package com.my.advanced.concurrent.thread;
+package com.my.advanced.thread;
 
 import com.my.advanced.concurrent.threadpool.EnumThreadPool;
 import java.util.concurrent.ExecutorService;

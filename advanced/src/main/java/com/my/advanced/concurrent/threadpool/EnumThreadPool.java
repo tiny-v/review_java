@@ -29,7 +29,10 @@ public enum EnumThreadPool {
 
     EnumThreadPool(){
 
-        ThreadFactory namedThreadFactory = new ThreadFactoryBuilder().setNameFormat("MyExecutor-Pool-%d").build();
+        ThreadFactory namedThreadFactory = new ThreadFactoryBuilder()
+                .setNameFormat("MyExecutor-Pool-%d")
+                .setUncaughtExceptionHandler( (Thread t, Throwable e)-> System.out.println("MyExecutor-Pool "+ t.getName() +" got exception "+ e.getMessage() ))
+                .build();
 
         executor = new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE,
                 60, TimeUnit.SECONDS, new SynchronousQueue<Runnable>(), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());

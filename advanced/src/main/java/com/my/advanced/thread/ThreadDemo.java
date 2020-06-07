@@ -1,4 +1,4 @@
-package com.my.advanced.concurrent.thread;
+package com.my.advanced.thread;
 
 /**
  * @author mayue

@@ -1,4 +1,4 @@
-package com.my.advanced.concurrent.semaphore;
+package com.my.advanced.concurrent.tools.semaphore;
 
 import java.util.concurrent.Semaphore;
 

@@ -1,7 +1,7 @@
-package com.my.advanced.concurrent.countdownlatch;
+package com.my.advanced.concurrent.tools.countdownlatch;
+import com.my.advanced.concurrent.threadpool.EnumThreadPool;
+
 import java.util.concurrent.CountDownLatch;
-import	java.util.concurrent.Executors;
-import	java.util.concurrent.ExecutorService;
 
 /**
  * CountDownLatch  主要用到两个方法:
@@ -17,15 +17,14 @@ public class CountDownLatchDemo1 {
 
     public void showDemo() throws InterruptedException{
         final CountDownLatch countDownLatch = new CountDownLatch(2);
-        ExecutorService executor = Executors.newCachedThreadPool();
         HaveLunch haveLunch1 = new HaveLunch("客人1", 3000, countDownLatch);
         HaveLunch haveLunch2 = new HaveLunch("客人2", 5000, countDownLatch);
         HaveLunch haveLunch3 = new HaveLunch("食堂工作人员", 4000, countDownLatch);
-        executor.execute(haveLunch1);
-        executor.execute(haveLunch2);
+        EnumThreadPool.Instance.executor.execute(haveLunch1);
+        EnumThreadPool.Instance.executor.execute(haveLunch2);
         countDownLatch.await();
-        executor.execute(haveLunch3);
-        executor.shutdown();
+        EnumThreadPool.Instance.executor.execute(haveLunch3);
+        EnumThreadPool.Instance.executor.shutdown();
     }
 
     public static void main(String[] args) throws InterruptedException {
