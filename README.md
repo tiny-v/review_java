@@ -35,6 +35,7 @@
  > 1. builder 创建者模式
  > 2. dynamicProxy 动态代理
  > 3. singleton 单例模式
+ > 4. strategy 策略模式
       
 
 
