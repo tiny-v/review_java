@@ -20,12 +20,16 @@ public enum EnumThreadPool {
     Instance;
 
     /** 保持活跃的线程数 */
-    public static final int CORE_POOL_SIZE = 5;
+    private static final int CORE_POOL_SIZE = 5;
 
     /**  默认最大线程数 */
-    public static final int MAXIMUM_POOL_SIZE = 20;
+    private static final int MAXIMUM_POOL_SIZE = 20;
 
-    public ThreadPoolExecutor executor;
+    private ThreadPoolExecutor executor;
+
+    public ThreadPoolExecutor getExecutor(){
+        return this.executor;
+    }
 
     EnumThreadPool(){
 

@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class RunnableDemo implements Runnable{
 
-    public static AtomicInteger counter = new AtomicInteger(0);
+    public static final AtomicInteger counter = new AtomicInteger(0);
 
     private static final int LOOP_SIZE = 500;
 
@@ -27,7 +27,7 @@ public class RunnableDemo implements Runnable{
     }
 
     public static void main(String[] args){
-        ExecutorService executor = EnumThreadPool.Instance.executor;
+        ExecutorService executor = EnumThreadPool.Instance.getExecutor();
         executor.execute(new RunnableDemo());
         executor.execute(new RunnableDemo());
         executor.execute(new RunnableDemo());

@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class CallableDemo implements Callable<Integer> {
 
-    public static AtomicInteger counter = new AtomicInteger(0);
+    private static final AtomicInteger counter = new AtomicInteger(0);
 
     private static final int LOOP_SIZE = 50;
 
@@ -30,7 +30,7 @@ public class CallableDemo implements Callable<Integer> {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        ExecutorService executor = EnumThreadPool.Instance.executor;
+        ExecutorService executor = EnumThreadPool.Instance.getExecutor();
         ArrayList<Callable<Integer>> taskList = new ArrayList();
         taskList.add(new CallableDemo());
         taskList.add(new CallableDemo());

@@ -8,7 +8,7 @@ public class ThreadDemo extends Thread {
 
     private static Integer counter = 0;
 
-    private final int LOOP_SIZE = 500;
+    private static final int LOOP_SIZE = 500;
 
     @Override
     public void run(){

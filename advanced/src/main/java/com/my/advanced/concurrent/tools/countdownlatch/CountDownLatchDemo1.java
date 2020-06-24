@@ -2,6 +2,7 @@ package com.my.advanced.concurrent.tools.countdownlatch;
 import com.my.advanced.concurrent.threadpool.EnumThreadPool;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * CountDownLatch  主要用到两个方法:
@@ -20,11 +21,12 @@ public class CountDownLatchDemo1 {
         HaveLunch haveLunch1 = new HaveLunch("客人1", 3000, countDownLatch);
         HaveLunch haveLunch2 = new HaveLunch("客人2", 5000, countDownLatch);
         HaveLunch haveLunch3 = new HaveLunch("食堂工作人员", 4000, countDownLatch);
-        EnumThreadPool.Instance.executor.execute(haveLunch1);
-        EnumThreadPool.Instance.executor.execute(haveLunch2);
+        ThreadPoolExecutor executor = EnumThreadPool.Instance.getExecutor();
+        executor.execute(haveLunch1);
+        executor.execute(haveLunch2);
         countDownLatch.await();
-        EnumThreadPool.Instance.executor.execute(haveLunch3);
-        EnumThreadPool.Instance.executor.shutdown();
+        executor.execute(haveLunch3);
+        executor.shutdown();
     }
 
     public static void main(String[] args) throws InterruptedException {
