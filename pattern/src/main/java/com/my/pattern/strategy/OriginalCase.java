@@ -10,7 +10,11 @@ import java.util.HashMap;
  */
 public class OriginalCase {
 
-    private void uglyCode(String dataSourceKind){
+    /**
+     * 使用if-else来查找指定策略
+     * @param dataSourceKind
+     */
+    private void ifElse(String dataSourceKind){
         if(dataSourceKind.equals(DataSourceKind.MYSQL.name())){
             //
         }else if(dataSourceKind.equals(DataSourceKind.REDIS.name())){
@@ -22,7 +26,11 @@ public class OriginalCase {
         }
     }
 
-    private void beautifuleCode(String dataSourceKind){
+    /**
+     * 使用类加载的方式来查找指定策略
+     * @param dataSourceKind
+     */
+    private void clazzFor(String dataSourceKind){
         Arrays.asList(DataSourceKind.values()).forEach(System.out::println);
         HashMap<String, String> hashmap = DataSourceKind.getClazzMap();
         if(hashmap.keySet().contains(dataSourceKind)){
@@ -40,9 +48,11 @@ public class OriginalCase {
         }
     }
 
+    ///todo: 使用注解的方式，应该更优雅一些吧
+
     public static void main(String[] args){
         OriginalCase originalCase = new OriginalCase();
-        originalCase.beautifuleCode("MYSQL");
+        originalCase.clazzFor("MYSQL");
     }
 
 }
