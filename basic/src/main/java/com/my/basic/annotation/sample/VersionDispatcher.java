@@ -1,4 +1,4 @@
-package com.my.others;
+package com.my.basic.annotation.sample;
 
 import java.io.File;
 import java.lang.annotation.Annotation;
