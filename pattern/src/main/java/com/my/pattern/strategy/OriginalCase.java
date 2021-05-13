@@ -1,8 +1,12 @@
 package com.my.pattern.strategy;
 
 import com.my.pattern.strategy.kind.DataSourceExecutor;
+
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
 
 /**
  * @author mayue
@@ -51,8 +55,26 @@ public class OriginalCase {
     ///todo: 使用注解的方式，应该更优雅一些吧
 
     public static void main(String[] args){
-        OriginalCase originalCase = new OriginalCase();
-        originalCase.clazzFor("MYSQL");
+        Set<String> set1 = new HashSet();
+        set1.add("bb");
+        set1.add("aa");
+        set1.add("cc");
+
+        Set<String> set2 = new HashSet();
+        set2.add("ae");
+        set2.add("bb");
+        set2.add("ea");
+
+        set1.addAll(set2);
+        for(String s: set1){
+            System.out.println(s);
+        }
+
+        //OriginalCase originalCase = new OriginalCase();
+        //originalCase.clazzFor("MYSQL");
+        //Charset cs = Charset.forName("utf-8");
+        //String body = new String(new byte[0], cs);
+        //System.out.println(body);
     }
 
 }

@@ -12,6 +12,7 @@
         <module>basic</module>
         <module>pattern</module>
         <module>advanced</module>
+        <module>maven</module>
     </modules>
 
     <properties>
