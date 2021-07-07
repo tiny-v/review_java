@@ -38,8 +38,10 @@ public enum EnumThreadPool {
                 .setUncaughtExceptionHandler( (Thread t, Throwable e)-> System.out.println("MyExecutor-Pool "+ t.getName() +" got exception "+ e.getMessage() ))
                 .build();
 
-        executor = new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE,
-                60, TimeUnit.SECONDS, new SynchronousQueue<Runnable>(), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
+        //executor = new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE,
+          //      60, TimeUnit.SECONDS, new SynchronousQueue<Runnable>(), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
+
+        executor = new RewriteThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, 60, TimeUnit.SECONDS, new SynchronousQueue<Runnable>(),"MyExecutor-Pool");
 
     }
 
