@@ -1,5 +1,7 @@
 package com.my.advanced.jvm.classloader;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -12,7 +14,9 @@ import java.io.InputStream;
  */
 public class ClassLoaderTest {
 
-    public static void main(String[] args) throws Exception{
+    private static Logger logger = LoggerFactory.getLogger(ClassLoaderTest.class);
+
+    public ClassLoader defineClassLoader(){
         ClassLoader myLoader = new ClassLoader() {
             @Override
             public Class<?> loadClass(String name) throws ClassNotFoundException {
@@ -30,10 +34,21 @@ public class ClassLoaderTest {
                 }
             }
         };
+        return myLoader;
+    }
 
-        Object obj = myLoader.loadClass("com.my.advanced.jvm.classloader.ClassLoaderTest").newInstance();
-
-        System.out.println(obj.getClass());
-        System.out.println(obj instanceof com.my.advanced.jvm.classloader.ClassLoaderTest);
+    public static void main(String[] args) throws Exception{
+        /* 当前类的类加载器 */
+        ClassLoaderTest clt = new ClassLoaderTest();
+        ClassLoader cltClassLoader = clt.getClass().getClassLoader();
+        logger.info("当前类的类加载器：{}", cltClassLoader.toString());
+        /* 自定义的类加载器 */
+        ClassLoader classLoader = clt.defineClassLoader();
+        logger.info("自定义类加载器：{}", classLoader.toString());
+        logger.info("自定义类加载器的父类：{}", classLoader.getParent().toString());
+        /* 使用自定义类加载器，加载当前类 */
+        Object obj = classLoader.loadClass("com.my.advanced.jvm.classloader.ClassLoaderTest").newInstance();
+        logger.info("自定义类加载器加载的类：{}", obj.getClass());
+        logger.info("该类是否和系统加载器加载的同一个类，是同一个东西：{}", obj instanceof com.my.advanced.jvm.classloader.ClassLoaderTest);
     }
 }
