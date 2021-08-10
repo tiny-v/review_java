@@ -13,8 +13,9 @@
  > 3. reflect 反射
  > 4. serialization 序列化 
  > 5. copy 深拷贝与浅拷贝 （使用Cloneable 和 Serializable）
+ > 6. annotation 注解 - 附上利用注解查找指定版本代码的demo
 
- <b>Advanced(进阶知识)</b>
+<b>Advanced(进阶知识)</b>
  
  ######  <b>一、并发 </b>
  > 1. 单线程 - (Thread, Runnable, Callable)
@@ -30,11 +31,12 @@
  > 4. 重写loadClass()方法来创建类加载器
  
 
- <b>Pattern(设计模式)</b>
+<b>Pattern(设计模式)</b>
    
  > 1. builder 创建者模式
  > 2. dynamicProxy 动态代理
  > 3. singleton 单例模式
+ > 4. strategy 策略模式
       
 
 

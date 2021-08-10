@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class ForkJoinSumTask extends RecursiveTask<Integer> {
 
-    private final int THRESHOlD = 100;
+    private static final int THRESHOlD = 100;
     private AtomicInteger task_split_count = new AtomicInteger(0);
 
 
