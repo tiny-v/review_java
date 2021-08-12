@@ -104,6 +104,11 @@ public class OriginalHttp {
         conn.setRequestProperty("connection", "Keep-Alive");
     }
 
+
+    public void deleteSecurityGroup(){
+
+    }
+
     /**
      * 打印页面内容
      * @param connection
@@ -125,7 +130,18 @@ public class OriginalHttp {
 
 
     public static void main(String[] args){
-        new OriginalHttp().httpUrlConnection();
+
+        //new OriginalHttp().httpUrlConnection();
+
+        String params = "1234,4567";
+        String result = "";
+        String[] idTemps = params.split(",");
+        for(String str: idTemps){
+            result = result + "\""+str+ "\"" +",";
+        }
+        result = result.substring(0, result.length()-1);
+        System.out.println(result);
+
     }
 
 }

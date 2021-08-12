@@ -31,7 +31,7 @@ public class ShallowCopyTest {
 
         p2.setAge(26);
         p2.setName("RZ");
-        p2.getAddress().setCity("WX");
+        p2.getAddress().setCity("WX");//此处p2修改city, p1里的city也被修改了。因为p2里的address对象，和 p1里的address, 指向的是同一个地址
         // age:25, name:MY, province:JS, city:WX
         p1.print();
         // age:26, name:RZ, province:JS, city:WX

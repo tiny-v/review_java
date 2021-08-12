@@ -30,7 +30,7 @@ public class DeepCopyTest {
         p2.setAge(26);
         p2.setName("RZ");
         p2.getAddress().setCity("WX");
-        // age:25, name:MY, province:JS, city:WX
+        // age:25, name:MY, province:JS, city:XZ
         p1.print();
         // age:26, name:RZ, province:JS, city:WX
         p2.print();
