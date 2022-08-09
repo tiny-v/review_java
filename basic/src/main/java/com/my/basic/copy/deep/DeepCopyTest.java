@@ -34,6 +34,8 @@ public class DeepCopyTest {
         p1.print();
         // age:26, name:RZ, province:JS, city:WX
         p2.print();
+
+
     }
 
 

@@ -2,7 +2,7 @@ package com.my.advanced.thread.deadlock;
 
 /**
  *
- * @author YMa69
+ * @author tiny_v
  * @date 2019/11/18
  */
 public class InnerThreadDemo implements Runnable{

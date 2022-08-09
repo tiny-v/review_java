@@ -31,8 +31,9 @@ public class LocalStatic {
          * 执行构造函数
          * 执行构造函数
          * */
-        LocalStatic localStatic1 = new LocalStatic("abc");
-        LocalStatic localStatic2 = new LocalStatic("abc");
+        //LocalStatic localStatic1 = new LocalStatic("abc");
+        //LocalStatic localStatic2 = new LocalStatic("abc");
+        System.out.println(Boolean.TRUE.equals(null));
     }
 
 }
